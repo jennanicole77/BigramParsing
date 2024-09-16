@@ -1,21 +1,24 @@
 # BigramParsing
 
-Create an application that can take as input any text (either a file or as a string) and output a histogram of the
-bigrams in the text.
+### To Run
 
-A bigram is any two adjacent words in the text. A histogram is a kind of graphical representation of numerical
-data.
+run.sh:
+* ./run.sh command
 
-**Example**
+*OR* 
 
-Given the text: “The quick brown fox and the quick blue hare.”
+* javac *.java
+* java Main.java exampleFile.txt
 
-The bigrams and their counts would be
-* "the quick":2
-* “quick brown”: 1
-* “brown fox”: 1
-* “fox and”: 1
-* “and the”: 1
-* “quick blue”: 1
-* “blue hare”: 1
+### File Structure
 
+src/java/bigramParsing:
+
+* run.sh: used to run main or tests.
+* Main.java: class that takes in a file path, reads data, uses BigramParser.java to parse data.
+* ReadFile.java: class that reads in a file
+* BigramParser.java: class that takes in data and parses all of the bigrams in the data.
+* BigramParserTest.java: class that runs multiple different tests against Main.java.
+
+src/resources:
+* All of the test case files used.
