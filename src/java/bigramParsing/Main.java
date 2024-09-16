@@ -20,6 +20,9 @@ public class Main {
         // Read in file
         ReadFile rf = new ReadFile();
         String data = rf.read(args[0]);
-        System.out.println(data);
+
+        // Create bigram parser, and get the string
+        BigramParser bigramParser = new BigramParser(data);
+        System.out.println(bigramParser.getBigrams());
     }
 }
