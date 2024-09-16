@@ -20,7 +20,7 @@ public class ReadFile {
             
             String currLine;
             while((currLine= br.readLine()) != null) {
-                data += currLine;
+                data += currLine + "\n";
             }
             
             br.close();

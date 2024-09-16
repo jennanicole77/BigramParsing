@@ -30,6 +30,33 @@ public class BigramParsingTest {
         // Test for invalid file given
         test("2: Invalid File Name", new String[] {"file.txt"}, "file.txt " + invalidFile);
 
+        // Test for empty file given
+        test("Empty File", new String[] {"../../resources/empty.txt"}, "");
+       
+        // Test for file with a single word
+        test("One Word", new String[] {"../../resources/singleWord.txt"}, "");
+       
+        // Test for file with just new lines
+        test("New Lines", new String[] {"../../resources/newLines.txt"}, "");
+       
+        // Test for white space surrounding text
+        test("Surrounding White Space", new String[] {"../../resources/whiteSpaceSurrounding.txt"}, 
+                "{extra space=1, space test=1}");
+       
+        // Test for space between text
+        test("Space Between Text", new String[] {"../../resources/spaceBetweenText.txt"}, 
+                "{space between=1, between test=1}");
+       
+        // Test for no duplicates
+        test("No Duplicates", new String[] {"../../resources/noDuplicates.txt"}, 
+                "{no duplicates=1, duplicates test=1}");
+    
+        // Test with all duplicates
+        test("All Duplicates", new String[] {"../../resources/allDuplicates.txt"}, "{hi hi=3}");
+       
+        // Test given example
+        test("Given Example", new String[] {"../../resources/example.txt"}, 
+                "{the quick=2, quick brown=1, brown fox=1, fox and=1, and the=1, quick blue=1, blue hare=1}");
     }
    
     /*

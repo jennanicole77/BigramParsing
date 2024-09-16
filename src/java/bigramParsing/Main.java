@@ -21,8 +21,11 @@ public class Main {
         ReadFile rf = new ReadFile();
         String data = rf.read(args[0]);
 
-        // Create bigram parser, and get the string
-        BigramParser bigramParser = new BigramParser(data);
-        System.out.println(bigramParser.getBigrams());
+        // Check that there is data
+        if(data != null && data.length() > 1) {
+            // Create bigram parser, and get the string
+            BigramParser bigramParser = new BigramParser(data);
+            System.out.println(bigramParser.getBigrams());
+        }
     }
 }

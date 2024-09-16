@@ -9,14 +9,14 @@ import java.util.*;
  */
 public class BigramParser {
 
-    private HashMap<String, Integer> bigrams;
+    private LinkedHashMap<String, Integer> bigrams;
 
     public BigramParser(String data) {
         parse(data);
     }
 
     public String getBigrams() {
-        return bigrams.toString();
+        return bigrams.isEmpty() ? "" : bigrams.toString();
     }
 
     private void parse(String data) {
@@ -24,7 +24,7 @@ public class BigramParser {
         Pattern pattern = Pattern.compile("\\w+");
         Matcher matcher = pattern.matcher(data);
         
-        bigrams = new HashMap<String, Integer>();
+        bigrams = new LinkedHashMap<String, Integer>();
         String firstWord = null;
 
         while(matcher.find()) {
@@ -36,7 +36,7 @@ public class BigramParser {
                 continue;
             }
 
-            String currBigram = firstWord + " " + secondWord;
+            String currBigram = firstWord.toLowerCase() + " " + secondWord.toLowerCase();
 
             // If the current bigram is already in the map, increment count
             // Otherwise, add to map.
